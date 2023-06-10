@@ -6,7 +6,7 @@ const Cadastro = () => {
   return (
     <div className={styles.container}>
       <h1>Cadastre-se para Postar</h1>
-      <p>Crie seu usuario e compartilhe suas historias</p>
+      <p>Crie seu usuario e compartilhe sua historia</p>
       <form className={styles.formulario}>
         <label>
           <span>nome: </span>

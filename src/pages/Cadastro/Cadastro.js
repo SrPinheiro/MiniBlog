@@ -20,12 +20,12 @@ const Cadastro = () => {
 
         <label>
           <span>Senha: </span>
-          <input type="text" name='senha' required placeholder='senha de usuario'/>
+          <input type="password" name='senha' required placeholder='senha de usuario'/>
         </label>
 
         <label>
           <span>confirme a senha: </span>
-          <input type="text" name='confirmarSenha' required placeholder='senha de usuario'/>
+          <input type="password" name='confirmarSenha' required placeholder='senha de usuario'/>
         </label>
 
         <label>

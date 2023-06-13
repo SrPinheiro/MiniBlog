@@ -97,7 +97,7 @@ input, textarea{
 }
 
 
-button[disabled]{
+input[disabled]{
   background-color: #AAA;
 }
 

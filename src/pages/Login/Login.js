@@ -22,7 +22,7 @@ const Login = () => {
   }, [loginError])
   return (
     <div className={styles.cadastro}>
-      <h2>Faça login para acessar o maior blog</h2>
+      <h2>Faça login para explorar o impensável</h2>
       <p>Que bom ter você aqui de novo</p>
 
       <form onSubmit={handleSubmit}>

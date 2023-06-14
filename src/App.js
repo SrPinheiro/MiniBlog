@@ -21,6 +21,7 @@ import Cadastro from './pages/Cadastro/Cadastro'
 import CreatePost from './pages/CreatePost/CreatePost';
 import Dashboard from './pages/Dashboard/Dashboard';
 import Loading from './pages/Loading/Loading';
+import NotFound from './pages/NotFound/NotFound';
 
 function App() {
   const [user, setUser] = useState(undefined)
@@ -51,6 +52,7 @@ function App() {
               <Route path='/singup' element={!user ? <Cadastro/> : <Navigate to={'/'} />} />
               <Route path='/posts/create' element={user ? <CreatePost/> : <Navigate to={'/singin'}/>} />
               <Route path='/dashboard' element={user ? <Dashboard/> : <Navigate to={'/singin'}/>} />
+              <Route path='*' element={<NotFound/>} />
             </Routes>
           </div>
           <Footer/>

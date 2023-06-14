@@ -1,0 +1,23 @@
+.container{
+  text-align: center;
+}
+
+.container > .textContainer{
+  margin-bottom: 2em;
+}
+
+.title span{
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+.textContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.textContainer > p{
+  width: 50%;
+}

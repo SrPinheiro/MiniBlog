@@ -11,6 +11,7 @@ import styles from './Navbar.module.css'
 
 const Navbar = () => {
   const {user} = useAuthValue();
+  const {logOut} = useAuthentication()
 
   const usuario = {
     name: "leonardo",
@@ -68,6 +69,10 @@ const Navbar = () => {
               <NavLink to="/dashboard" className={({ isActive }) => (isActive ? styles.active : "")}>
                 DashBoard
               </NavLink>
+            </li>
+
+            <li>
+              <NavLink onClick={logOut}>Sair</NavLink>
             </li>
           </>
         )}

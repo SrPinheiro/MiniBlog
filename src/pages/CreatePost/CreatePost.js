@@ -4,22 +4,30 @@ import styles from './CreatePost.module.css'
 // Hooks
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useInsertDocument } from '../../Hooks/useInsertDocument'
 
 //Context
 import { useAuthValue } from '../../context/authContext'
+import { db } from '../../firebase/config'
 
 const CreatePost = () => {
   const [post,setPost] = useState({title: "", image: "", body: "", tag: ""})
   const [tags, setTags] = useState([])
   const [formError, setFormError] = useState("")
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState("")
+  const {insertDocument, response} = useInsertDocument("posts")
+  const {user} = useAuthValue()
 
   const handleSubmit = e =>{
     e.preventDefault();
-    setLoading(true)
+    setFormError("")
+    
+    // validar URL
 
-    setLoading(false)
+    // criar Array de tags
+
+    // checar todos os valores
+    insertDocument({title: post.title, image: post.image, body: post.body, tags: post.tag.split(" "), uid: user.uid, createdBy: user.displayName})
+
   }
 
   const handleUpdatePost = e =>{
@@ -52,10 +60,8 @@ const CreatePost = () => {
           <span>Tags:</span>
           <input type="text" name="tag" required onChange={handleUpdatePost} placeholder='insira as tags' value={post.tag}/>
         </label>
-        {error && <p className='error'>{error}</p>}
-        {!loading && <input type='submit' className='btn' value={'Postar'}></input>}
-        {loading && <input type='submit' className='btn' value={'Postando...'} disabled></input>}
-
+        {response.error && <p className='error'>{response.error}</p>}
+        {!response.loading ? (<input type='submit' className='btn' value={'Postar'}/>) : <input type='submit' className='btn' value={'Postando...'} disabled/>}
       </form>
 
     </div>

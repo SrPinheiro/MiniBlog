@@ -3,7 +3,7 @@ import styles from './Cadastro.module.css'
 import { useAuthentication } from '../../Hooks/useAuthentication'
 
 const Cadastro = () => {
-  const [userData, setUserData] = useState({displayname: "", email: "", senha: "", confirmarSenha: ""})
+  const [userData, setUserData] = useState({displayName: "", email: "", senha: "", confirmarSenha: ""})
   const [error, setError] = useState("")
 
   const {createUser, error: authError, loading} = useAuthentication()
@@ -40,7 +40,7 @@ const Cadastro = () => {
       <form className={styles.formulario} onSubmit={handleSubmit}>
         <label>
           <span>nome: </span>
-          <input type="text" name='displayname' required placeholder='Nome de usuario' value={userData.displayname} onChange={handleUpdateUserData}/>
+          <input type="text" name='displayName' required placeholder='Nome de usuario' value={userData.displayName} onChange={handleUpdateUserData}/>
         </label>
 
         <label>

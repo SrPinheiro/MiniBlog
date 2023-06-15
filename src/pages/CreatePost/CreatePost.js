@@ -2,7 +2,7 @@
 import styles from './CreatePost.module.css'
 
 // Hooks
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 //Context
@@ -26,6 +26,7 @@ const CreatePost = () => {
     e.preventDefault();
     setPost(oldPost => ({...oldPost, [e.target.name]: e.target.value}));
     }
+
 
   return (
     <div className={styles.container}>

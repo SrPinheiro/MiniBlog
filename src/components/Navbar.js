@@ -10,7 +10,7 @@ import { useAuthentication } from '../Hooks/useAuthentication'
 import styles from './Navbar.module.css'
 
 const Navbar = () => {
-  const {user} = useAuthValue();
+  var {user} = useAuthValue();
   const {logOut} = useAuthentication()
 
   return (

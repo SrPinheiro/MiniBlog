@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import {getFirestore} from 'firebase/firestore'
-import { useApiData } from "../Hooks/useApiData";
+import { useApiData } from "../security/useApiData";
 
 // eslint-disable-next-line react-hooks/rules-of-hooks
 const firebaseConfig = useApiData()

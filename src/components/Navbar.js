@@ -13,16 +13,6 @@ const Navbar = () => {
   const {user} = useAuthValue();
   const {logOut} = useAuthentication()
 
-  const usuario = {
-    name: "leonardo",
-    idade: 18, 
-    virgem: true,
-    tabela2: {
-      name: "ola"
-    }
-  }
-
-  console.table(usuario)
   return (
     <nav className={styles.navbar}>
       <NavLink to="/" className={styles.brand}>

@@ -17,18 +17,29 @@ const CreatePost = () => {
   const {insertDocument, response} = useInsertDocument("posts")
   const {user} = useAuthValue()
 
+  console.log(user  )
+
   const handleSubmit = e =>{
     e.preventDefault();
     setFormError("")
     
     // validar URL
+    try{
+      new URL(post.image)
+    }catch (error){
+      setFormError("A imagem precisa ser uma URL valida!")
+      return
+    }
 
     // criar Array de tags
+    const tags = post.tag.split(" ").map((tag) => tag.trim().toLowerCase())
 
-    // checar todos os valores
-    insertDocument({title: post.title, image: post.image, body: post.body, tags: post.tag.split(" "), uid: user.uid, createdBy: user.displayName})
-
+    insertDocument({title: post.title.replace(/\s+/g, " "), image: post.image, body: post.body.replace(/\s+/g, " "), tags: tags, uid: user.uid, createdBy: user.displayName})
   }
+
+  useEffect(() => {
+    setFormError(response.error)
+  }, [response.error])
 
   const handleUpdatePost = e =>{
     e.preventDefault();
@@ -60,7 +71,7 @@ const CreatePost = () => {
           <span>Tags:</span>
           <input type="text" name="tag" required onChange={handleUpdatePost} placeholder='insira as tags' value={post.tag}/>
         </label>
-        {response.error && <p className='error'>{response.error}</p>}
+        {formError && <p className='error'>{formError}</p>}
         {!response.loading ? (<input type='submit' className='btn' value={'Postar'}/>) : <input type='submit' className='btn' value={'Postando...'} disabled/>}
       </form>
 

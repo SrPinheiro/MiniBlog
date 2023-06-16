@@ -35,4 +35,4 @@ Contribuições são bem-vindas! Se você deseja melhorar este projeto ou adicio
 
 ## Licença
 
-Este projeto está licenciado sob a [MIT License](link_para_licenca). 
+Este projeto está licenciado sob a [MIT License](https://github.com/SrPinheiro/MiniBlog/blob/main/LICENSE). 

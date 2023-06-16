@@ -20,14 +20,24 @@ O MiniBlog React é uma aplicação web que permite aos usuários compartilharem
 - HTML
 - CSS
 - JavaScript
+- Firebase
 
 ## Instalação
 
 1. Clone este repositório: `git clone https://github.com/SrPinheiro/MiniBlog.git`
 2. Navegue até o diretório do projeto: `cd MiniBlog`
 3. Instale as dependências: `npm install`
-4. Inicie a aplicação: `npm start`
-5. Acesse a aplicação em seu navegador: `http://localhost:3000`
+4. Crie o arquivo `.env` na pasta raiz do projeto
+5. Dentro do arquivo adicione as informações da sua chave API do firebase
+  #### exemplo
+      apiKey=<chave>
+      authDomain=<chave>
+      projectId=<chave>
+      storageBucket=<chave>
+      messagingSenderId=<chave>
+      appId=<chave>
+6. Inicie a aplicação: `npm start`
+7. Acesse a aplicação em seu navegador: `http://localhost:3000`
 
 ## Contribuição
 
